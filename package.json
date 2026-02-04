@@ -1,6 +1,7 @@
 {
   "name": "@endpoint-fetcher/cache",
   "version": "1.0.0",
+  "type": "module",
   "description": "Caching plugin for endpoint-fetcher with type-safe wrapper support",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
