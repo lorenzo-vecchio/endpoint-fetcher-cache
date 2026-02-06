@@ -42,7 +42,7 @@
   "bugs": {
     "url": "https://github.com/lorenzo-vecchio/endpoint-fetcher-cache/issues"
   },
-  "homepage": "https://github.com/lorenzo-vecchio/endpoint-fetcher-cache#readme",
+  "homepage": "https://endpoint-fetcher.lorenzovecchio.dev/plugins/cache_plugin",
   "engines": {
     "node": ">=16.0.0"
   },
