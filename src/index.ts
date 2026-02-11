@@ -1,5 +1,4 @@
 import { createPlugin } from 'endpoint-fetcher';
-import type { PluginOptions } from 'endpoint-fetcher';
 
 /**
  * Wrapper type that adds caching metadata and methods to the response
@@ -244,14 +243,14 @@ const defaultKeyGenerator = (method: string, path: string, input: any): string =
  * });
  * ```
  */
-export const cache = createPlugin('cache', (config: CachePluginConfig = {}): PluginOptions => {
+export const cache = createPlugin('cache', (config?: CachePluginConfig) => {
   const {
     ttl = 300,
     methods = ['GET'],
     maxSize = Infinity,
     keyGenerator = defaultKeyGenerator,
     storage = new InMemoryCacheStorage(maxSize)
-  } = config;
+  } = config || {};
   
   return {
     name: 'cache',
