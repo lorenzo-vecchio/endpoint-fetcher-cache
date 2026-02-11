@@ -244,7 +244,7 @@ const defaultKeyGenerator = (method: string, path: string, input: any): string =
  * });
  * ```
  */
-export const cache = createPlugin((config: CachePluginConfig = {}): PluginOptions => {
+export const cache = createPlugin('cache', (config: CachePluginConfig = {}): PluginOptions => {
   const {
     ttl = 300,
     methods = ['GET'],
@@ -254,6 +254,7 @@ export const cache = createPlugin((config: CachePluginConfig = {}): PluginOption
   } = config;
   
   return {
+    name: 'cache',
     handlerWrapper: <TInput, TOutput, TError>(
       originalHandler: (
         input: TInput,
@@ -333,6 +334,18 @@ export const cache = createPlugin((config: CachePluginConfig = {}): PluginOption
         
         return createWrapper(result, cachedAt, expiresAt);
       };
+    },
+    methods: {
+      clear: () => {
+        storage.clear();
+      },
+      invalidate: (method: string, path: string, input: any) => {
+        const key = keyGenerator(method, path, input);
+        storage.delete(key);
+      },
+      invalidateKey: (key: string) => {
+        storage.delete(key);
+      }
     }
   };
 });
