@@ -47,11 +47,11 @@
     "node": ">=16.0.0"
   },
   "peerDependencies": {
-    "endpoint-fetcher": "^2.0.0"
+    "endpoint-fetcher": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "endpoint-fetcher": "^2.1.1",
+    "endpoint-fetcher": "^2.3.0",
     "tsup": "^8.5.1",
     "typescript": "^5.0.0"
   }
