@@ -1,5 +1,7 @@
 # @endpoint-fetcher/cache
 
+![NPM Downloads](https://img.shields.io/npm/d18m/%40endpoint-fetcher%2Fcache?style=for-the-badge)
+
 A caching plugin for [endpoint-fetcher](https://github.com/lorenzo-vecchio/endpoint-fetcher) that adds intelligent caching with type-safe metadata.
 
 ## Features
